@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Lounge</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for LinkedIn icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1a202c;
+            /* Темный цвет текста */
+        }
+
+        /* Пользовательское поведение прокрутки для плавной прокрутки */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .section-padding {
+            padding: 4rem 1rem;
+            /* Адаптивный отступ для секций */
+        }
+
+        @media (min-width: 768px) {
+            .section-padding {
+                padding: 6rem 2rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .section-padding {
+                padding: 8rem 4rem;
+            }
+        }
+
+        /* Пользовательские стили кнопок */
+        .btn-primary {
+            @apply bg-blue-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition-all duration-300 ease-in-out;
+            transform: translateY(0);
+        }
+
+        .btn-primary:hover {
+            @apply bg-blue-700 shadow-xl;
+            transform: translateY(-4px) scale(1.02);
+            /* Более заметное поднятие и небольшое увеличение */
+        }
+
+        .btn-secondary {
+            @apply border-2 border-blue-600 text-blue-600 font-semibold py-3 px-8 rounded-full transition-all duration-300 ease-in-out;
+            background-color: transparent;
+            transform: translateY(0);
+        }
+
+        .btn-secondary:hover {
+            @apply bg-blue-600 text-white shadow-lg;
+            transform: translateY(-4px) scale(1.02);
+            /* Более заметное поднятие и небольшое увеличение */
+        }
+
+        /* Активное состояние переключателя языка */
+        .lang-button.active {
+            @apply bg-blue-700 text-white;
+        }
+
+        /* Исправление переноса слов в меню */
+        .navbar-item {
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+    <!-- Заголовок -->
+    <header class="bg-white shadow-md fixed w-full z-50">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-blue-800">Language Lounge</div>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#benefits"
+                    class="text-gray-700 hover:text-blue-600 transition duration-300 navbar-item">Benefits</a>
+                <a href="#about-me" class="text-gray-700 hover:text-blue-600 transition duration-300 navbar-item">About
+                    Me</a>
+                <a href="#languages"
+                    class="text-gray-700 hover:text-blue-600 transition duration-300 navbar-item">Languages</a>
+                <a href="#education"
+                    class="text-gray-700 hover:text-blue-600 transition duration-300 navbar-item">Education</a>
+                <a href="#experience"
+                    class="text-gray-700 hover:text-blue-600 transition duration-300 navbar-item">Experience</a>
+                <a href="#my-works" class="text-gray-700 hover:text-blue-600 transition duration-300 navbar-item">My
+                    Works</a>
+                <a href="#feedback"
+                    class="text-gray-700 hover:text-blue-600 transition duration-300 navbar-item">Feedback</a>
+                <a href="#contacts"
+                    class="text-gray-700 hover:text-blue-600 transition duration-300 navbar-item">Contacts</a>
+                <a href="https://www.linkedin.com/in/marianna-tkacheva-6b127072/" target="_blank"
+                    class="text-gray-700 hover:text-blue-600 transition duration-300">
+                    <i class="fab fa-linkedin text-2xl"></i>
+                </a>
+            </div>
+            <!-- Кнопка мобильного меню -->
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <!-- Мобильное меню -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-2 shadow-lg">
+            <a href="#benefits" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 navbar-item">Benefits</a>
+            <a href="#about-me" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 navbar-item">About Me</a>
+            <a href="#languages" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 navbar-item">Languages</a>
+            <a href="#education" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 navbar-item">Education</a>
+            <a href="#experience" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 navbar-item">Experience</a>
+            <a href="#my-works" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 navbar-item">My Works</a>
+            <a href="#feedback" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 navbar-item">Feedback</a>
+            <a href="#contacts" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 navbar-item">Contacts</a>
+            <a href="https://www.linkedin.com/in/marianna-tkacheva-6b127072/" target="_blank"
+                class="block px-4 py-2 text-gray-700 hover:bg-blue-100">
+                <i class="fab fa-linkedin mr-2"></i> LinkedIn
+            </a>
+        </div>
+    </header>
+
+    <!-- Переключатель языка -->
+    <div class="fixed top-20 right-4 z-50 flex space-x-2 bg-white p-2 rounded-lg shadow-md">
+        <button class="lang-button px-4 py-2 rounded-full text-sm font-medium bg-blue-500 text-white active"
+            data-lang="en">EN</button>
+        <button class="lang-button px-4 py-2 rounded-full text-sm font-medium bg-gray-200 text-gray-700"
+            data-lang="uk">UA</button>
+    </div>
+
+    <!-- Главный экран -->
+    <section id="hero"
+        class="relative bg-gradient-to-r from-blue-100 to-purple-100 min-h-screen flex items-center justify-center pt-24 pb-12 overflow-hidden">
+        <div
+            class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between text-center md:text-left">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <div class="lang-content" data-lang="en">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-blue-900 leading-tight mb-6">
+                        Efficient Private English Lessons Personalized to Your Needs
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-700 mb-8">
+                        Get your head out of the book and into the game of practicing English in person. Start speaking
+                        fluently and easily with the experienced English tutor.
+                    </p>
+                    <p class="text-xl italic text-blue-700 mb-8">
+                        “I have been accumulating knowledge for over 25 years to pass it on to you in my customized
+                        English lessons”
+                    </p>
+                </div>
+                <div class="lang-content hidden" data-lang="uk">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-blue-900 leading-tight mb-6">
+                        Ефективні приватні уроки англійської мови, адаптовані до ваших потреб
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-700 mb-8">
+                        Виходьте за межі підручника та пориньте у практику англійської мови особисто. Почніть вільно та
+                        легко розмовляти з досвідченим викладачем англійської.
+                    </p>
+                    <p class="text-xl italic text-blue-700 mb-8">
+                        «Я накопичувала знання понад 25 років, щоб передати їх вам на своїх індивідуальних уроках
+                        англійської»
+                    </p>
+                </div>
+                <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+                    <a href="#contacts" class="btn-primary">
+                        <button type="button"
+                            class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-sm font-medium">
+                            Contact me
+                        </button>
+                    </a>
+                    <a href="#contacts" class="btn-secondary">
+                        <button
+                            class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-blue-700 rounded-lg group bg-white border-2 border-blue-500 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300">
+                            <span
+                                class="relative px-5 py-1.5 transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-transparent group-hover:text-white">
+                                Book trial lesson
+                            </span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center md:justify-end">
+                <!-- Заполнитель для моей фотографии -->
+                <img src="https://placehold.co/400x400/A7D9FF/2C3E50?text=My+Picture" alt="Teacher's picture"
+                    class="rounded-full shadow-xl border-4 border-white transform hover:scale-105 transition duration-300 ease-in-out">
+            </div>
+        </div>
+    </section>
+
+    <!-- ЧТО ВЫ ПОЛУЧАЕТЕ? (Секция преимуществ) -->
+    <section id="benefits" class="section-padding bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="lang-content" data-lang="en">
+                <h2 class="text-4xl font-bold text-center text-blue-800 mb-12">WHAT’S IN THIS FOR YOU?</h2>
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[repeat(auto-fit,minmax(300px,1fr))] justify-center gap-10">
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-4">Personalized Lessons</h3>
+                        <p class="text-gray-700">You get top-quality, one-on-one practical lessons tailored to your
+                            interests and linguistic needs – when the class is about you, and only you!</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-4">Structured Training</h3>
+                        <p class="text-gray-700">You get highly structured training that helps you achieve success in
+                            complex language exams and real-life communication on professional topics.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-4">Up-to-date Materials</h3>
+                        <p class="text-gray-700">You get interesting, up-to-date learning materials for different
+                            professional spheres and topics (Business, IT, Marketing, Academic Writing, and more).</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-4">Interactive Activities</h3>
+                        <p class="text-gray-700">You participate in activities that foster thinking in a foreign
+                            language (interactive language games, puzzles, original audio and video content, creative
+                            tasks, and storytelling challenges).</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-4">Natural Environment</h3>
+                        <p class="text-gray-700">We stick to a foreign language without translating into a mother
+                            tongue, thus simulating a natural language environment at our lessons.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-4">Detailed Feedback</h3>
+                        <p class="text-gray-700">You get assignments for further practice, which I check and offer
+                            detailed feedback, identifying areas where you need improvement and letting you discover
+                            your growth areas.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-4">Flexible Schedule</h3>
+                        <p class="text-gray-700">I accommodate your work/study schedule and offer a flexible curriculum
+                            that fits your lifestyle, with step-by-step sessions and personalized pace.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-4">Reasonable Rates</h3>
+                        <p class="text-gray-700">I charge a reasonable hourly rate that can align with various income
+                            levels.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="lang-content hidden" data-lang="uk">
+                <h2 class="text-4xl font-bold text-center text-blue-800 mb-12">ЩО ВИ ОТРИМУЄТЕ?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-center">
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-4">Персоналізовані уроки</h3>
+                        <p class="text-gray-700">Ви отримуєте високоякісні індивідуальні практичні уроки, адаптовані до
+                            ваших інтересів та мовних потреб – коли заняття присвячені лише вам!</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-4">Структуроване навчання</h3>
+                        <p class="text-gray-700">Ви отримуєте високоструктуроване навчання, яке допоможе вам досягти
+                            успіху у складних мовних іспитах та реальному спілкуванні на професійні теми.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-4">Сучасні матеріали</h3>
+                        <p class="text-gray-700">Ви отримуєте цікаві, сучасні навчальні матеріали для різних професійних
+                            сфер та тем (Бізнес, ІТ, Маркетинг, Академічне письмо тощо).</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-4">Інтерактивні заходи</h3>
+                        <p class="text-gray-700">Ви берете участь у заходах, що сприяють мисленню іноземною мовою
+                            (інтерактивні мовні ігри, головоломки, оригінальний аудіо- та відеоконтент, творчі завдання
+                            та розповіді).</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-4">Природне середовище</h3>
+                        <p class="text-gray-700">Ми дотримуємося іноземної мови без перекладу на рідну, таким чином
+                            імітуючи природне мовне середовище на наших уроках.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-4">Детальний зворотний зв'язок</h3>
+                        <p class="text-gray-700">Ви отримуєте завдання для подальшої практики, які я перевіряю та надаю
+                            детальний зворотний зв'язок, визначаючи сфери, де вам потрібне вдосконалення, та дозволяючи
+                            вам відкрити свої зони росту.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-4">Гнучкий графік</h3>
+                        <p class="text-gray-700">Я враховую ваш робочий/навчальний графік та пропоную гнучку навчальну
+                            програму, яка відповідає вашому способу життя, з покроковими заняттями та індивідуальним
+                            темпом.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-4">Розумні ціни</h3>
+                        <p class="text-gray-700">Я пропоную розумну погодинну ставку, яка може відповідати різним рівням
+                            доходу.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#contacts" class="btn-primary">
+
+                    <button type="button"
+                        class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+                        Contact me
+                    </button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ОБО МНЕ Секция -->
+    <section id="about-me" class="section-padding bg-gradient-to-l from-blue-50 to-purple-50">
+        <div class="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-12">
+            <div class="lg:w-1/2">
+                <div class="lang-content" data-lang="en">
+                    <h2 class="text-4xl font-bold text-blue-800 mb-8">ABOUT ME</h2>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        I love words and stories. Over the years, I have worn a bunch of different hats: teacher,
+                        editor, proofreader, translator, localizer, copywriter, content writer, UX/UI copywriter,
+                        content manager, and SMM manager.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        I embarked on my linguistic journey first as a teacher of English and German at the universities
+                        where I taught students majoring in foreign languages. Later, I decided to shift my focus and
+                        entered the IT industry. I wanted to have my finger in the pie of this rapidly developing
+                        sphere. I worked at IT startups, where I was a ‘jack-of-all-trades,’ and at large content
+                        factories, where I managed content departments and worked with various topics.
+                    </p>
+                    <p class="text-700 leading-relaxed mb-4">
+                        I also take on interesting freelance projects and have a couple of pet projects online that I
+                        conceived and implemented on my own. My favorite pastime is ‘Playing God’ with words to bring
+                        new worlds into existence.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mb-8">
+                        I’m a hardworking, responsible, punctual, and self-demanding soul who is open to new horizons
+                        and passionate about developing professionally and personally. I’m a quick learner with
+                        versatile interests and an easy-going social mixer.
+                    </p>
+                </div>
+                <div class="lang-content hidden" data-lang="uk">
+                    <h2 class="text-4xl font-bold text-blue-800 mb-8">ПРО МЕНЕ</h2>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Я люблю слова та історії. Протягом багатьох років я виконувала безліч ролей: викладач, редактор,
+                        коректор, перекладач, локалізатор, копірайтер, контент-райтер, UX/UI копірайтер,
+                        контент-менеджер та SMM-менеджер.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Свій лінгвістичний шлях я розпочала як викладач англійської та німецької мов в університетах, де
+                        навчала студентів, які спеціалізувалися на іноземних мовах. Пізніше я вирішила змінити фокус і
+                        увійшла в ІТ-індустрію. Я хотіла бути в курсі цієї стрімко розвиваючої сфери. Я працювала в
+                        ІТ-стартапах, де була «майстром на всі руки», та у великих контент-фабриках, де керувала
+                        відділами контенту та працювала з різними темами.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Я також беруся за цікаві фріланс-проекти та маю кілька власних онлайн-проектів, які я задумала
+                        та реалізувала самостійно. Моє улюблене заняття – «грати в Бога» зі словами, щоб створювати нові
+                        світи.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mb-8">
+                        Я працьовита, відповідальна, пунктуальна та вимоглива до себе людина, яка відкрита до нових
+                        горизонтів та пристрасно прагне професійного та особистісного розвитку. Я швидко навчаюся, маю
+                        різнобічні інтереси та легко знаходжу спільну мову.
+                    </p>
+                </div>
+                <a href="#contacts" class="btn-primary">
+
+                    <button type="button"
+                        class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+                        Contact me
+                    </button>
+                </a>
+            </div>
+            <div class="lg:w-1/2 flex justify-center">
+                <!-- Заполнитель для видео -->
+                <div
+                    class="w-full max-w-md bg-gray-200 rounded-lg shadow-xl overflow-hidden aspect-video flex items-center justify-center text-gray-600 text-lg">
+                    [Изображение заполнителя видео]
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция ЯЗЫКИ, которые я знаю и преподаю -->
+    <section id="languages" class="section-padding bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="lang-content" data-lang="en">
+                <h2 class="text-4xl font-bold text-center text-blue-800 mb-12">LANGUAGES which I know & teach</h2>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <ol class="list-decimal list-inside space-y-4 text-gray-700">
+                        <li>
+                            <h3 class="text-2xl font-semibold text-blue-700 inline">English <span
+                                    class="text-base text-gray-500">(C2; Full professional proficiency)</span></h3>
+                            <p>I teach it to adults and teenagers (Business English; English for IT specialists; TOEFL
+                                preparation, different school/college exams preparation; everyday communication for
+                                beginners, intermediate, advanced).</p>
+                        </li>
+                        <li>
+                            <h3 class="text-2xl font-semibold text-blue-700 inline">German <span
+                                    class="text-base text-gray-500">(B1-B2; Professional working proficiency)</span>
+                            </h3>
+                            <p>I teach it to adults and teenagers (everyday communication for beginners, intermediate).
+                            </p>
+                        </li>
+                        <li>
+                            <h3 class="text-2xl font-semibold text-blue-700 inline">Romanian <span
+                                    class="text-base text-gray-500">(B1-B2; Professional working proficiency)</span>
+                            </h3>
+                            <p>I teach it to adults and teenagers (everyday communication for beginners, intermediate).
+                            </p>
+                        </li>
+                        <li>
+                            <h3 class="text-2xl font-semibold text-blue-700 inline">Ukrainian <span
+                                    class="text-base text-gray-500">(Native / bilingual proficiency)</span></h3>
+                            <p>I teach it to adults and teenagers (everyday communication for beginners, intermediate,
+                                advanced).</p>
+                        </li>
+                        <li>
+                            <h3 class="text-2xl font-semibold text-blue-700 inline">Russian <span
+                                    class="text-base text-gray-500">(Native / bilingual proficiency)</span></h3>
+                            <p>I teach it to adults and teenagers (everyday communication for beginners, intermediate,
+                                advanced).</p>
+                        </li>
+                        <li>
+                            <h3 class="text-2xl font-semibold text-blue-700 inline">Hindi <span
+                                    class="text-base text-gray-500">(A1; Elementary proficiency)</span></h3>
+                        </li>
+                        <li>
+                            <h3 class="text-2xl font-semibold text-blue-700 inline">Latin <span
+                                    class="text-base text-gray-500">(A1; Elementary proficiency)</span></h3>
+                        </li>
+                        <li>
+                            <h3 class="text-2xl font-semibold text-blue-700 inline">Old English <span
+                                    class="text-base text-gray-500">(A1; Elementary proficiency)</span></h3>
+                        </li>
+                        <li>
+                            <h3 class="text-2xl font-semibold text-blue-700 inline">Gothic <span
+                                    class="text-base text-gray-500">(A1; Elementary proficiency)</span></h3>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="lang-content hidden" data-lang="uk">
+                <h2 class="text-4xl font-bold text-center text-blue-800 mb-12">МОВИ, ЯКІ Я ЗНАЮ ТА ВИКЛАДАЮ</h2>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <ol class="list-decimal list-inside space-y-4 text-gray-700">
+                        <li>
+                            <h3 class="text-2xl font-semibold text-blue-700 inline">Англійська <span
+                                    class="text-base text-gray-500">(C2; Вільне володіння)</span></h3>
+                            <p>Викладаю дорослим та підліткам (Бізнес-англійська; Англійська для ІТ-спеціалістів;
+                                підготовка до TOEFL, підготовка до різних шкільних/коледжних іспитів; повсякденне
+                                спілкування для початківців, середнього та просунутого рівня).</p>
+                        </li>
+                        <li>
+                            <h3 class="text-2xl font-semibold text-blue-700 inline">Німецька <span
+                                    class="text-base text-gray-500">(B1-B2; Професійне володіння)</span></h3>
+                            <p>Викладаю дорослим та підліткам (повсякденне спілкування для початківців, середнього
+                                рівня).</p>
+                        </li>
+                        <li>
+                            <h3 class="text-2xl font-semibold text-blue-700 inline">Румунська <span
+                                    class="text-base text-gray-500">(B1-B2; Професійне володіння)</span></h3>
+                            <p>Викладаю дорослим та підліткам (повсякденне спілкування для початківців, середнього
+                                рівня).</p>
+                        </li>
+                        <li>
+                            <h3 class="text-2xl font-semibold text-blue-700 inline">Українська <span
+                                    class="text-base text-gray-500">(Рідна / двомовне володіння)</span></h3>
+                            <p>Викладаю дорослим та підліткам (повсякденне спілкування для початківців, середнього,
+                                просунутого рівня).</p>
+                        </li>
+                        <li>
+                            <h3 class="text-2xl font-semibold text-blue-700 inline">Російська <span
+                                    class="text-base text-gray-500">(Рідна / двомовне володіння)</span></h3>
+                            <p>Викладаю дорослим та підліткам (повсякденне спілкування для початківців, середнього,
+                                просунутого рівня).</p>
+                        </li>
+                        <li>
+                            <h3 class="text-2xl font-semibold text-blue-700 inline">Гінді <span
+                                    class="text-base text-gray-500">(A1; Початковий рівень)</span></h3>
+                        </li>
+                        <li>
+                            <h3 class="text-2xl font-semibold text-blue-700 inline">Латинська <span
+                                    class="text-base text-gray-500">(A1; Початковий рівень)</span></h3>
+                        </li>
+                        <li>
+                            <h3 class="text-2xl font-semibold text-blue-700 inline">Староанглійська <span
+                                    class="text-base text-gray-500">(A1; Початковий рівень)</span></h3>
+                        </li>
+                        <li>
+                            <h3 class="text-2xl font-semibold text-blue-700 inline">Готська <span
+                                    class="text-base text-gray-500">(A1; Початковий рівень)</span></h3>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция МОЕ ОБРАЗОВАНИЕ -->
+    <section id="education" class="section-padding bg-gradient-to-r from-blue-50 to-purple-50">
+        <div class="container mx-auto px-4">
+            <div class="lang-content" data-lang="en">
+                <h2 class="text-4xl font-bold text-center text-blue-800 mb-12">MY EDUCATION</h2>
+                <div class="space-y-8">
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-2">2010 – 2025: Continuous Professional
+                            Education</h3>
+                        <p class="text-gray-700">Regular offline/online courses, webinars, workshops, conferences, and
+                            presentations (Copyhackers.com, LinkedIn.com, Udemy.com, Free Marketing School (Kyiv), Free
+                            Journalism School (Kyiv), Simultaneous Interpretation School (Kyiv), and more).</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-2">2002-2005: Post-graduate course at
+                            Cherkasy National University</h3>
+                        <p class="text-gray-700">“Germanic languages” specialism; PhD thesis (working towards
+                            completion).</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-2">2002: Junior Fulbright Academic Exchange
+                            Program</h3>
+                        <p class="text-gray-700">The field of Cognitive Psychology. I advanced to the final interview
+                            stage, passed the required exams (28-29-30 (TOEFL); 480-480-4 (GRE)), and was distinguished
+                            by the selection committee as an outstanding applicant complying with the high international
+                            esteem of our scientific advisor and her school.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-2">1993-1998: Cherkasy State University</h3>
+                        <p class="text-gray-700">Specialist Diploma Cum Laude, majoring in English and German languages
+                            and foreign literature.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="lang-content hidden" data-lang="uk">
+                <h2 class="text-4xl font-bold text-center text-blue-800 mb-12">МОЯ ОСВІТА</h2>
+                <div class="space-y-8">
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-2">2010 – 2025: Безперервна професійна освіта
+                        </h3>
+                        <p class="text-gray-700">Регулярні офлайн/онлайн курси, вебінари, воркшопи, конференції та
+                            презентації (Copyhackers.com, LinkedIn.com, Udemy.com, Free Marketing School (Київ), Free
+                            Journalism School (Київ), Simultaneous Interpretation School (Київ) та інше).</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-2">2002-2005: Аспірантура в Черкаському
+                            національному університеті</h3>
+                        <p class="text-gray-700">Спеціальність «Германські мови»; кандидатська дисертація (робота над
+                            завершенням).</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-2">2002: Програма академічного обміну Junior
+                            Fulbright</h3>
+                        <p class="text-gray-700">Галузь когнітивної психології. Я пройшла до фінального етапу
+                            співбесіди, склала необхідні іспити (28-29-30 (TOEFL); 480-480-4 (GRE)) і була відзначена
+                            відбірковою комісією як видатний кандидат, який відповідає високій міжнародній повазі нашого
+                            наукового керівника та її школи.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-2">1993-1998: Черкаський державний
+                            університет</h3>
+                        <p class="text-gray-700">Диплом спеціаліста з відзнакою, спеціалізація – англійська та німецька
+                            мови та зарубіжна література.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция МНЕ ДОВЕРЯЮТ (Опыт) -->
+    <section id="experience" class="section-padding bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="lang-content" data-lang="en">
+                <h2 class="text-4xl font-bold text-center text-blue-800 mb-12">I’M TRUSTED BY</h2>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <ul class="list-disc list-inside space-y-4 text-gray-700">
+                        <li>
+                            <h3 class="text-2xl font-semibold text-blue-700 inline">Educational Establishments (1998 –
+                                2025)</h3>
+                            <ul class="list-disc list-inside ml-8 space-y-2 text-gray-700">
+                                <li>Educational consulting and tutoring (Teaching Business English, English for Specific
+                                    Purposes, TOEFL) at International School of Foreign Languages “IQ Consultancy”.</li>
+                                <li>Teaching English at the language school “EnglishUa” (Kyiv).</li>
+                                <li>Teaching foreign languages at Kyiv Institute of Tourism.</li>
+                                <li>Teaching English (as the major subject at the Foreign Languages Department), other
+                                    foreign languages (German, Latin), and specialized subjects (Stylistics; Phonetics;
+                                    Fundamentals of Scientific Research) at Cherkasy National University.</li>
+                                <li>Teaching English (as a major at the Foreign Languages Department) and other foreign
+                                    languages (English/German for Special Purposes) at Cherkasy Engineering and
+                                    Technical Institute.</li>
+                                <li>Teaching foreign languages (English/German for Special Purposes) at Cherkasy
+                                    business college.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h3 class="text-2xl font-semibold text-blue-700 inline">IT Companies (2011 – 2025)</h3>
+                            <p>I created different types of web content for corporate websites and versatile creative
+                                copy for online advertising initiatives in the IT sphere, FinTech, EdTech, MarTech, and
+                                AdTech. I developed Content Strategy/Content Plan/Tone of Voice/Style Guide;
+                                proofread/edited; translated/localized (DE, UA, RU) for both IT companies and
+                                translation agencies.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="lang-content hidden" data-lang="uk">
+                <h2 class="text-4xl font-bold text-center text-blue-800 mb-12">МЕНІ ДОВІРЯЮТЬ</h2>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <ul class="list-disc list-inside space-y-4 text-gray-700">
+                        <li>
+                            <h3 class="text-2xl font-semibold text-blue-700 inline">Навчальні заклади (1998 – 2025)</h3>
+                            <ul class="list-disc list-inside ml-8 space-y-2 text-gray-700">
+                                <li>Освітній консалтинг та репетиторство (викладання ділової англійської, англійської
+                                    для спеціальних цілей, TOEFL) в Міжнародній школі іноземних мов «IQ Consultancy».
+                                </li>
+                                <li>Викладання англійської мови в мовній школі «EnglishUa» (Київ).</li>
+                                <li>Викладання іноземних мов у Київському інституті туризму.</li>
+                                <li>Викладання англійської мови (як основний предмет на кафедрі іноземних мов), інших
+                                    іноземних мов (німецька, латинська) та спеціалізованих предметів (стилістика;
+                                    фонетика; основи наукових досліджень) у Черкаському національному університеті.</li>
+                                <li>Викладання англійської мови (як основний предмет на кафедрі іноземних мов) та інших
+                                    іноземних мов (англійська/німецька для спеціальних цілей) у Черкаському
+                                    інженерно-технічному інституті.</li>
+                                <li>Викладання іноземних мов (англійська/німецька для спеціальних цілей) у Черкаському
+                                    бізнес-коледжі.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h3 class="text-2xl font-semibold text-blue-700 inline">ІТ-компанії (2011 – 2025)</h3>
+                            <p>Я створювала різні типи веб-контенту для корпоративних веб-сайтів та різноманітні
+                                креативні тексти для онлайн-рекламних ініціатив у сфері ІТ, FinTech, EdTech, MarTech та
+                                AdTech. Я розробляла контент-стратегію/контент-план/тон голосу/стайл-гайд;
+                                коректувала/редагувала; перекладала/локалізувала (DE, UA, RU) для ІТ-компаній та
+                                перекладацьких агентств.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#contacts" class="btn-primary">
+                    <button type="button"
+                        class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+                        Contact me
+                    </button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция МОИ РАБОТЫ -->
+    <section id="my-works" class="section-padding bg-gradient-to-l from-blue-50 to-purple-50">
+        <div class="container mx-auto px-4">
+            <div class="lang-content" data-lang="en">
+                <h2 class="text-4xl font-bold text-center text-blue-800 mb-12">MY WORKS</h2>
+                <p class="text-center text-gray-700 mb-10">Here are some of my online articles and scientific
+                    publications in printed journal volumes:</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Статья 1 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                        <img src="https://placehold.co/300x200/A7D9FF/2C3E50?text=Article+Image+1"
+                            alt="Изображение статьи" class="rounded-md mb-4 w-full h-48 object-cover">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2">How to Combine a Passion for Writing and
+                            Earning Money</h3>
+                        <a href="https://www.ning.com/blog/2017/04/making-money-blogging.html" target="_blank"
+                            class="text-blue-600 hover:underline mt-auto">Read more</a>
+                    </div>
+                    <!-- Статья 2 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                        <img src="https://placehold.co/300x200/A7D9FF/2C3E50?text=Article+Image+2"
+                            alt="Изображение статьи" class="rounded-md mb-4 w-full h-48 object-cover">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2">How Cultural Differences Affect Outsourcing
+                            of Software Development</h3>
+                        <a href="https://sonerim.com/blog/how-cultural-differences-affect-outsourcing-of-software-development/"
+                            target="_blank" class="text-blue-600 hover:underline mt-auto">Read more</a>
+                    </div>
+                    <!-- Статья 3 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                        <img src="https://placehold.co/300x200/A7D9FF/2C3E50?text=Article+Image+3"
+                            alt="Изображение статьи" class="rounded-md mb-4 w-full h-48 object-cover">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2">Languages of the Olympics</h3>
+                        <a href="https://vidby.com/blog/languages-of-the-olympics" target="_blank"
+                            class="text-blue-600 hover:underline mt-auto">Read more</a>
+                    </div>
+                    <!-- Статья 4 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                        <img src="https://placehold.co/300x200/A7D9FF/2C3E50?text=Article+Image+4"
+                            alt="Изображение статьи" class="rounded-md mb-4 w-full h-48 object-cover">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2">Hard and Easy Books</h3>
+                        <a href="https://bit.ua/2015/01/hard-and-easy-books/" target="_blank"
+                            class="text-blue-600 hover:underline mt-auto">Read more</a>
+                    </div>
+                    <!-- Статья 5 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                        <img src="https://placehold.co/300x200/A7D9FF/2C3E50?text=Article+Image+5"
+                            alt="Изображение статьи" class="rounded-md mb-4 w-full h-48 object-cover">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2">Space is Ours</h3>
+                        <a href="https://bit.ua/2015/01/space-is-ours/" target="_blank"
+                            class="text-blue-600 hover:underline mt-auto">Read more</a>
+                    </div>
+                    <!-- Научная публикация 1 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                        <img src="https://placehold.co/300x200/A7D9FF/2C3E50?text=Publication+Image+1"
+                            alt="Изображение публикации" class="rounded-md mb-4 w-full h-48 object-cover">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2">English Adverbs: Conceptual Models of
+                            Designation.</h3>
+                        <p class="text-gray-700 text-sm">Proceedings of the 8th International Conference on Cognitive
+                            Linguistics “Research in Cognitive Linguistics, Functionalism and Discourse: Common Ground
+                            and New Directions”. Logroño, Spain. January 1, 2003.</p>
+                    </div>
+                    <!-- Научная публикация 2 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                        <img src="https://placehold.co/300x200/A7D9FF/2C3E50?text=Publication+Image+2"
+                            alt="Изображение публикации" class="rounded-md mb-4 w-full h-48 object-cover">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2">Английские наречия способа бытия:
+                            перспективы концептуального анализа.</h3>
+                        <p class="text-gray-700 text-sm">Актуальні проблеми менталінгвістики: Науковий збірник
+                            матеріалів міжнародної конференції з когнітивної лінгвістики. Варшава, Польща. 2003.</p>
+                    </div>
+                    <!-- Научная публикация 3 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                        <img src="https://placehold.co/300x200/A7D9FF/2C3E50?text=Publication+Image+3"
+                            alt="Изображение публикации" class="rounded-md mb-4 w-full h-48 object-cover">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2">Аргументные роли в семантике английских
+                            наречий способа бытия.</h3>
+                        <p class="text-gray-700 text-sm">Вісник Харківського національного університету ім. В. Н.
+                            Каразіна. Випуск № 609. – Харків: Константа. 2003.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#contacts" class="btn-primary">
+
+                    <button type="button"
+                        class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+                        Contact me
+                    </button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция РЕКОМЕНДАЦИИ (Отзывы) -->
+    <section id="feedback" class="section-padding bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="lang-content" data-lang="en">
+                <h2 class="text-4xl font-bold text-center text-blue-800 mb-12">RECOMMENDATIONS</h2>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <ul class="space-y-4 text-gray-700">
+                        <li>
+                            <div class="flex items-start mb-2">
+                                <img src="https://placehold.co/60x60/A7D9FF/2C3E50?text=GS" alt="Galina Sadirova"
+                                    class="rounded-full mr-4 border-2 border-blue-200">
+                                <div>
+                                    <h3 class="text-xl font-semibold text-blue-700">Galina Sadirova</h3>
+                                    <p class="text-gray-600 text-sm">Freelance translator/interpreter</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed">Marianna manifests excellent skills in everything
+                                she does, whether it is translation, handicraft, poetry or any other sphere of her
+                                competence. Marianna never rests on her laurels - she is totally committed to
+                                professional and personal growth. This trait helps her keep pace with new ideas and
+                                technologies and find unconventional solutions to emerging challenges. Marianna is a
+                                bright personality with broad outlook and impressive vocabulary. Her wit and sense of
+                                humor add specific tinge to her style of work.</p>
+                        </li>
+                        <li>
+                            <div class="flex items-start mb-2">
+                                <img src="https://placehold.co/60x60/A7D9FF/2C3E50?text=DV" alt="Daria Volochniuk"
+                                    class="rounded-full mr-4 border-2 border-blue-200">
+                                <div>
+                                    <h3 class="text-xl font-semibold text-blue-700">Daria Volochniuk</h3>
+                                    <p class="text-gray-600 text-sm">COO/Co-owner at Neon Goose Studio, COO at Flight
+                                        Refunder</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed">This gentle little lady firstly surprised me with
+                                her will to work. Brilliant with everything she does. She needs to be perfect and I'm
+                                saying it with proud. If you want to have a great editor, professional linguist and a
+                                talented writer - Marianna is your right choice.</p>
+                        </li>
+                        <li>
+                            <div class="flex items-start mb-2">
+                                <img src="https://placehold.co/60x60/A7D9FF/2C3E50?text=VD" alt="Victoria Dudka"
+                                    class="rounded-full mr-4 border-2 border-blue-200">
+                                <div>
+                                    <h3 class="text-xl font-semibold text-blue-700">Victoria Dudka</h3>
+                                    <p class="text-gray-600 text-sm">SEO Editor at AirAdvisor</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed">Marianna is the premier adept of Code of Ethics.
+                                The outstanding personal traits and professional approach to any project/task make her
+                                an ideal specialist. She has an exclusive many-years' experience as an editor and
+                                English grammar instructor.</p>
+                        </li>
+                        <li>
+                            <div class="flex items-start mb-2">
+                                <img src="https://placehold.co/60x60/A7D9FF/2C3E50?text=MB" alt="Max Bondarenko"
+                                    class="rounded-full mr-4 border-2 border-blue-200">
+                                <div>
+                                    <h3 class="text-xl font-semibold text-blue-700">Max Bondarenko</h3>
+                                    <p class="text-gray-600 text-sm">CMO at Spendbase</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed">I have really enjoyed working with Marianna on the
+                                content marketing side and she has been always delivering best-in-class results. Both
+                                hard skills and soft skills are right on top!</p>
+                        </li>
+                        <li>
+                            <div class="flex items-start mb-2">
+                                <img src="https://placehold.co/60x60/A7D9FF/2C3E50?text=VZ" alt="Viktoriia Zosim"
+                                    class="rounded-full mr-4 border-2 border-blue-200">
+                                <div>
+                                    <h3 class="text-xl font-semibold text-blue-700">Viktoriia Zosim</h3>
+                                    <p class="text-gray-600 text-sm">CEO & Co-Founder at STRUKTURA</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed">Marianna is one of the brightest and pleasant
+                                people I have ever worked with! She is a real specialist in content writing and content
+                                management, everything is always done easily, quickly and on the highest level.</p>
+                        </li>
+                        <li>
+                            <div class="flex items-start mb-2">
+                                <img src="https://placehold.co/60x60/A7D9FF/2C3E50?text=NZ" alt="Nataliya Zub"
+                                    class="rounded-full mr-4 border-2 border-blue-200">
+                                <div>
+                                    <h3 class="text-xl font-semibold text-blue-700">Nataliya Zub</h3>
+                                    <p class="text-gray-600 text-sm">Executive Manager, Independent Director, Digital
+                                        Transformation Leader, Board Advisor, Consultant, Mentor</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed">It’s always enjoyable to work alongside great
+                                experts and Marianna is one of them. She is hard-working and responsible and always
+                                inspires me with her passion, knowledge and positive attitude.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="text-center mt-12">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4">STUDENTS’ FEEDBACK</h3>
+                    <p class="text-gray-700">(To be added later)</p>
+                </div>
+            </div>
+            <div class="lang-content hidden" data-lang="uk">
+                <h2 class="text-4xl font-bold text-center text-blue-800 mb-12">РЕКОМЕНДАЦІЇ</h2>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <ul class="list-disc list-inside space-y-4 text-gray-700">
+                        <li>
+                            <div class="flex items-start mb-2">
+                                <img src="https://placehold.co/60x60/A7D9FF/2C3E50?text=ГС" alt="Галина Садирова"
+                                    class="rounded-full mr-4 border-2 border-blue-200">
+                                <div>
+                                    <h3 class="text-xl font-semibold text-blue-700">Галина Садирова</h3>
+                                    <p class="text-gray-600 text-sm">Фріланс-перекладач/усний перекладач</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed">Маріанна демонструє відмінні навички у всьому, що
+                                вона робить, будь то переклад, рукоділля, поезія чи будь-яка інша сфера її компетенції.
+                                Маріанна ніколи не зупиняється на досягнутому – вона повністю віддана професійному та
+                                особистісному зростанню. Ця риса допомагає їй йти в ногу з новими ідеями та технологіями
+                                та знаходити нетрадиційні рішення для виникаючих викликів. Маріанна – яскрава
+                                особистість з широким кругозором та вражаючим словниковим запасом. Її дотепність та
+                                почуття гумору додають особливого відтінку її стилю роботи.</p>
+                        </li>
+                        <li>
+                            <div class="flex items-start mb-2">
+                                <img src="https://placehold.co/60x60/A7D9FF/2C3E50?text=ДВ" alt="Дар'я Волочнюк"
+                                    class="rounded-full mr-4 border-2 border-blue-200">
+                                <div>
+                                    <h3 class="text-xl font-semibold text-blue-700">Дар'я Волочнюк</h3>
+                                    <p class="text-gray-600 text-sm">Операційний директор/співвласник Neon Goose Studio,
+                                        операційний директор Flight Refunder</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed">Ця ніжна маленька леді спочатку здивувала мене
+                                своєю волею до роботи. Блискуча у всьому, що вона робить. Їй потрібно бути ідеальною, і
+                                я кажу це з гордістю. Якщо ви хочете мати чудового редактора, професійного лінгвіста та
+                                талановитого письменника – Маріанна ваш правильний вибір.</p>
+                        </li>
+                        <li>
+                            <div class="flex items-start mb-2">
+                                <img src="https://placehold.co/60x60/A7D9FF/2C3E50?text=ВД" alt="Вікторія Дудка"
+                                    class="rounded-full mr-4 border-2 border-blue-200">
+                                <div>
+                                    <h3 class="text-xl font-semibold text-blue-700">Вікторія Дудка</h3>
+                                    <p class="text-gray-600 text-sm">SEO-редактор в AirAdvisor</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed">Маріанна є головним знавцем Кодексу етики. Видатні
+                                особисті якості та професійний підхід до будь-якого проекту/завдання роблять її
+                                ідеальним спеціалістом. Вона має ексклюзивний багаторічний досвід роботи редактором та
+                                викладачем англійської граматики.</p>
+                        </li>
+                        <li>
+                            <div class="flex items-start mb-2">
+                                <img src="https://placehold.co/60x60/A7D9FF/2C3E50?text=МБ" alt="Макс Бондаренко"
+                                    class="rounded-full mr-4 border-2 border-blue-200">
+                                <div>
+                                    <h3 class="text-xl font-semibold text-blue-700">Макс Бондаренко</h3>
+                                    <p class="text-gray-600 text-sm">CMO в Spendbase</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed">Мені дуже сподобалося працювати з Маріанною над
+                                контент-маркетингом, і вона завжди показувала найкращі результати. І жорсткі, і м'які
+                                навички на висоті!</p>
+                        </li>
+                        <li>
+                            <div class="flex items-start mb-2">
+                                <img src="https://placehold.co/60x60/A7D9FF/2C3E50?text=ВЗ" alt="Вікторія Зосім"
+                                    class="rounded-full mr-4 border-2 border-blue-200">
+                                <div>
+                                    <h3 class="text-xl font-semibold text-blue-700">Вікторія Зосім</h3>
+                                    <p class="text-gray-600 text-sm">CEO & Co-Founder в STRUKTURA</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed">Маріанна – одна з найяскравіших та найприємніших
+                                людей, з якими я коли-небудь працювала! Вона справжній спеціаліст у написанні та
+                                управлінні контентом, все завжди робиться легко, швидко та на найвищому рівні.</p>
+                        </li>
+                        <li>
+                            <div class="flex items-start mb-2">
+                                <img src="https://placehold.co/60x60/A7D9FF/2C3E50?text=НЗ" alt="Наталія Зуб"
+                                    class="rounded-full mr-4 border-2 border-blue-200">
+                                <div>
+                                    <h3 class="text-xl font-semibold text-blue-700">Наталія Зуб</h3>
+                                    <p class="text-gray-600 text-sm">Виконавчий директор, незалежний директор, лідер
+                                        цифрової трансформації, радник ради, консультант, наставник</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed">Завжди приємно працювати пліч-о-пліч з чудовими
+                                експертами, і Маріанна – одна з них. Вона працьовита та відповідальна і завжди надихає
+                                мене своєю пристрастю, знаннями та позитивним настроєм.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="text-center mt-12">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4">ВІДГУКИ СТУДЕНТІВ</h3>
+                    <p class="text-gray-700">(Будуть додані пізніше)</p>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#contacts" class="btn-primary">
+
+                    <button type="button"
+                        class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+                        Contact me
+                    </button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция КАК СО МНОЙ СВЯЗАТЬСЯ (Контакты) -->
+    <section id="contacts" class="section-padding bg-gradient-to-r from-blue-100 to-purple-100">
+        <div class="container mx-auto px-4 text-center">
+            <div class="lang-content" data-lang="en">
+                <h2 class="text-4xl font-bold text-blue-800 mb-8">HOW TO GET IN TOUCH WITH ME</h2>
+                <p class="text-lg text-gray-700 mb-6">To book a trial lesson or ask me any questions, please fill out
+                    the form below:</p>
+                <div class="bg-white p-8 rounded-lg shadow-xl inline-block w-full max-w-md">
+                    <form action="mailto:novak.marian@gmail.com" method="post" enctype="text/plain" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-left text-gray-700 text-sm font-bold mb-2">Name:</label>
+                            <input type="text" id="name" name="name"
+                                class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                placeholder="Your Name" required>
+                        </div>
+                        <div>
+                            <label for="email"
+                                class="block text-left text-gray-700 text-sm font-bold mb-2">Email:</label>
+                            <input type="email" id="email" name="email"
+                                class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                placeholder="your.email@example.com" required>
+                        </div>
+                        <div>
+                            <label for="message"
+                                class="block text-left text-gray-700 text-sm font-bold mb-2">Message:</label>
+                            <textarea id="message" name="message" rows="5"
+                                class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                placeholder="Your message..." required></textarea>
+                        </div>
+                        <button type="submit"
+                            class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+                            Send Message
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+            <div class="lang-content hidden" data-lang="uk">
+                <h2 class="text-4xl font-bold text-blue-800 mb-8">ЯК ЗІ МНОЮ ЗВ'ЯЗАТИСЯ</h2>
+                <p class="text-lg text-gray-700 mb-6">Щоб записатися на пробний урок або поставити мені будь-які
+                    запитання, будь ласка, заповніть форму нижче:</p>
+                <div class="bg-white p-8 rounded-lg shadow-xl inline-block w-full max-w-md">
+                    <form action="mailto:novak.marian@gmail.com" method="post" enctype="text/plain" class="space-y-6">
+                        <div>
+                            <label for="name-uk"
+                                class="block text-left text-gray-700 text-sm font-bold mb-2">Ім'я:</label>
+                            <input type="text" id="name-uk" name="name-uk"
+                                class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                placeholder="Ваше ім'я" required>
+                        </div>
+                        <div>
+                            <label for="email-uk"
+                                class="block text-left text-gray-700 text-sm font-bold mb-2">Електронна пошта:</label>
+                            <input type="email" id="email-uk" name="email-uk"
+                                class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                placeholder="your.email@example.com" required>
+                        </div>
+                        <div>
+                            <label for="message-uk"
+                                class="block text-left text-gray-700 text-sm font-bold mb-2">Повідомлення:</label>
+                            <textarea id="message-uk" name="message-uk" rows="5"
+                                class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                placeholder="Ваше повідомлення..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary w-full">Надіслати повідомлення</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Нижний колонтитул -->
+    <footer class="bg-blue-900 text-white py-8">
+        <div
+            class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <div class="mb-4 md:mb-0">
+                <p>&copy; Copyright 2025. Powered by Language Lounge</p>
+            </div>
+            <div>
+                <a href="https://www.linkedin.com/in/marianna-tkacheva-6b127072/" target="_blank"
+                    class="text-white hover:text-blue-300 transition duration-300">
+                    <i class="fab fa-linkedin text-3xl"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Переключение мобильного меню
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Логика переключения языка
+        const langButtons = document.querySelectorAll('.lang-button');
+        const langContents = document.querySelectorAll('.lang-content');
+
+        langButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const selectedLang = button.dataset.lang;
+
+                // Удалить активный класс со всех кнопок и добавить к нажатой
+                langButtons.forEach(btn => {
+                    btn.classList.remove('active', 'bg-blue-500', 'text-white');
+                    btn.classList.add('bg-gray-200', 'text-gray-700');
+                });
+                button.classList.add('active', 'bg-blue-500', 'text-white');
+                button.classList.remove('bg-gray-200', 'text-gray-700');
+
+                // Скрыть весь языковой контент и показать только выбранный
+                langContents.forEach(content => {
+                    if (content.dataset.lang === selectedLang) {
+                        content.classList.remove('hidden');
+                    } else {
+                        content.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        // Плавная прокрутка для навигационных ссылок
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                // Закрыть мобильное меню после нажатия на ссылку
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
