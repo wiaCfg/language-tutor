@@ -76,11 +76,11 @@
     </style>
 </head>
 
-<body class="bg-white">
+<body class="bg-white overflow-x-hidden">
     <!-- Заголовок -->
-    <header class="bg-white shadow-md fixed w-full z-50">
-        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold text-blue-800">Language Lounge</div>
+    <header class="bg-white shadow-md sticky top-0 w-full z-50">
+        <nav class="w-full mx-auto px-4 py-4 flex justify-between items-center overflow-x-auto">
+            <div class="text-2xl font-bold text-blue-700">Language Lounge</div>
             <div class="hidden md:flex items-center space-x-6">
                 <a href="#benefits"
                     class="text-gray-700 hover:text-blue-600 transition duration-300 navbar-item">Benefits</a>
@@ -141,52 +141,73 @@
 
     <!-- Главный экран -->
     <section id="hero"
-        class="relative bg-gradient-to-r from-blue-100 to-purple-100 min-h-screen flex items-center justify-center pt-24 pb-12 overflow-hidden">
+        class="relative bg-[#4300FF] min-h-screen flex items-center justify-center pt-24 pb-12 overflow-hidden">
         <div
             class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between text-center md:text-left">
             <div class="md:w-1/2 mb-10 md:mb-0">
                 <div class="lang-content" data-lang="en">
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-blue-900 leading-tight mb-6">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
                         Efficient Private English Lessons Personalized to Your Needs
                     </h1>
-                    <p class="text-lg md:text-xl text-gray-700 mb-8">
+                    <p class="text-lg md:text-xl text-white mb-8">
                         Get your head out of the book and into the game of practicing English in person. Start speaking
                         fluently and easily with the experienced English tutor.
                     </p>
-                    <p class="text-xl italic text-blue-700 mb-8">
+                    <p class="text-xl italic text-white mb-8">
                         “I have been accumulating knowledge for over 25 years to pass it on to you in my customized
                         English lessons”
                     </p>
                 </div>
                 <div class="lang-content hidden" data-lang="uk">
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-blue-900 leading-tight mb-6">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
                         Ефективні приватні уроки англійської мови, адаптовані до ваших потреб
                     </h1>
-                    <p class="text-lg md:text-xl text-gray-700 mb-8">
+                    <p class="text-lg md:text-xl text-white mb-8">
                         Виходьте за межі підручника та пориньте у практику англійської мови особисто. Почніть вільно та
                         легко розмовляти з досвідченим викладачем англійської.
                     </p>
-                    <p class="text-xl italic text-blue-700 mb-8">
+                    <p class="text-xl italic text-white mb-8">
                         «Я накопичувала знання понад 25 років, щоб передати їх вам на своїх індивідуальних уроках
                         англійської»
                     </p>
                 </div>
-                <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
-                    <a href="#contacts" class="btn-primary">
-                        <button type="button"
-                            class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-sm font-medium">
-                            Contact me
-                        </button>
-                    </a>
-                    <a href="#contacts" class="btn-secondary">
-                        <button
-                            class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-blue-700 rounded-lg group bg-white border-2 border-blue-500 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300">
-                            <span
-                                class="relative px-5 py-1.5 transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-transparent group-hover:text-white">
-                                Book trial lesson
-                            </span>
-                        </button>
-                    </a>
+                <div class="lang-content" data-lang="en">
+                    <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+                        <a href="#contacts" class="btn-primary">
+                            <button type="button"
+                                class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-sm font-medium">
+                                Contact me
+                            </button>
+                        </a>
+                        <a href="#contacts" class="btn-secondary">
+                            <button
+                                class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-blue-700 rounded-lg group bg-white border-2 border-blue-500 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300">
+                                <span
+                                    class="relative px-5 py-1.5 transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-transparent group-hover:text-white">
+                                    Book trial lesson
+                                </span>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div class="lang-content hidden" data-lang="uk">
+                    <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+                        <a href="#contacts" class="btn-primary">
+                            <button type="button"
+                                class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-sm font-medium">
+                                Написати мені
+                            </button>
+                        </a>
+                        <a href="#contacts" class="btn-secondary">
+                            <button
+                                class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-blue-700 rounded-lg group bg-white border-2 border-blue-500 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300">
+                                <span
+                                    class="relative px-5 py-1.5 transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-transparent group-hover:text-white">
+                                    Записатися на пробний урок
+                                </span>
+                            </button>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="md:w-1/2 flex justify-center md:justify-end">
@@ -199,9 +220,9 @@
 
     <!-- ЧТО ВЫ ПОЛУЧАЕТЕ? (Секция преимуществ) -->
     <section id="benefits" class="section-padding bg-gray-50">
-        <div class="container mx-auto px-4">
+        <div class="container max-w-full w-full mx-auto px-4">
             <div class="lang-content" data-lang="en">
-                <h2 class="text-4xl font-bold text-center text-blue-800 mb-12">WHAT’S IN THIS FOR YOU?</h2>
+                <h2 class="text-2xl md:text-4xl font-bold text-center text-blue-800 mb-12">WHAT’S IN THIS FOR YOU?</h2>
                 <div
                     class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[repeat(auto-fit,minmax(300px,1fr))] justify-center gap-10">
                     <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
@@ -249,8 +270,9 @@
                 </div>
             </div>
             <div class="lang-content hidden" data-lang="uk">
-                <h2 class="text-4xl font-bold text-center text-blue-800 mb-12">ЩО ВИ ОТРИМУЄТЕ?</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-center">
+                <h2 class="text-2xl md:text-4xl font-bold text-center text-blue-800 mb-12">ЩО ВИ ОТРИМУЄТЕ?</h2>
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[repeat(auto-fit,minmax(300px,1fr))] justify-center gap-10">
                     <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
                         <h3 class="text-2xl font-semibold text-blue-700 mb-4">Персоналізовані уроки</h3>
                         <p class="text-gray-700">Ви отримуєте високоякісні індивідуальні практичні уроки, адаптовані до
@@ -309,54 +331,54 @@
     </section>
 
     <!-- ОБО МНЕ Секция -->
-    <section id="about-me" class="section-padding bg-gradient-to-l from-blue-50 to-purple-50">
-        <div class="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-12">
+    <section id="about-me" class="section-padding bg-[#4300FF]">
+        <div class="container max-w-full w-full mx-auto px-4 flex flex-col lg:flex-row items-center gap-12">
             <div class="lg:w-1/2">
                 <div class="lang-content" data-lang="en">
-                    <h2 class="text-4xl font-bold text-blue-800 mb-8">ABOUT ME</h2>
-                    <p class="text-gray-700 leading-relaxed mb-4">
+                    <h2 class="text-2xl md:text-4xl font-bold text-white mb-8">ABOUT ME</h2>
+                    <p class="text-white leading-relaxed mb-4">
                         I love words and stories. Over the years, I have worn a bunch of different hats: teacher,
                         editor, proofreader, translator, localizer, copywriter, content writer, UX/UI copywriter,
                         content manager, and SMM manager.
                     </p>
-                    <p class="text-gray-700 leading-relaxed mb-4">
+                    <p class="text-white leading-relaxed mb-4">
                         I embarked on my linguistic journey first as a teacher of English and German at the universities
                         where I taught students majoring in foreign languages. Later, I decided to shift my focus and
                         entered the IT industry. I wanted to have my finger in the pie of this rapidly developing
                         sphere. I worked at IT startups, where I was a ‘jack-of-all-trades,’ and at large content
                         factories, where I managed content departments and worked with various topics.
                     </p>
-                    <p class="text-700 leading-relaxed mb-4">
+                    <p class="text-white leading-relaxed mb-4">
                         I also take on interesting freelance projects and have a couple of pet projects online that I
                         conceived and implemented on my own. My favorite pastime is ‘Playing God’ with words to bring
                         new worlds into existence.
                     </p>
-                    <p class="text-gray-700 leading-relaxed mb-8">
+                    <p class="text-white leading-relaxed mb-8">
                         I’m a hardworking, responsible, punctual, and self-demanding soul who is open to new horizons
                         and passionate about developing professionally and personally. I’m a quick learner with
                         versatile interests and an easy-going social mixer.
                     </p>
                 </div>
                 <div class="lang-content hidden" data-lang="uk">
-                    <h2 class="text-4xl font-bold text-blue-800 mb-8">ПРО МЕНЕ</h2>
-                    <p class="text-gray-700 leading-relaxed mb-4">
+                    <h2 class="text-2xl md:text-4xl font-bold text-blue-800 mb-8">ПРО МЕНЕ</h2>
+                    <p class="text-white leading-relaxed mb-4">
                         Я люблю слова та історії. Протягом багатьох років я виконувала безліч ролей: викладач, редактор,
                         коректор, перекладач, локалізатор, копірайтер, контент-райтер, UX/UI копірайтер,
                         контент-менеджер та SMM-менеджер.
                     </p>
-                    <p class="text-gray-700 leading-relaxed mb-4">
+                    <p class="text-white leading-relaxed mb-4">
                         Свій лінгвістичний шлях я розпочала як викладач англійської та німецької мов в університетах, де
                         навчала студентів, які спеціалізувалися на іноземних мовах. Пізніше я вирішила змінити фокус і
                         увійшла в ІТ-індустрію. Я хотіла бути в курсі цієї стрімко розвиваючої сфери. Я працювала в
                         ІТ-стартапах, де була «майстром на всі руки», та у великих контент-фабриках, де керувала
                         відділами контенту та працювала з різними темами.
                     </p>
-                    <p class="text-gray-700 leading-relaxed mb-4">
+                    <p class="text-white leading-relaxed mb-4">
                         Я також беруся за цікаві фріланс-проекти та маю кілька власних онлайн-проектів, які я задумала
                         та реалізувала самостійно. Моє улюблене заняття – «грати в Бога» зі словами, щоб створювати нові
                         світи.
                     </p>
-                    <p class="text-gray-700 leading-relaxed mb-8">
+                    <p class="text-white leading-relaxed mb-8">
                         Я працьовита, відповідальна, пунктуальна та вимоглива до себе людина, яка відкрита до нових
                         горизонтів та пристрасно прагне професійного та особистісного розвитку. Я швидко навчаюся, маю
                         різнобічні інтереси та легко знаходжу спільну мову.
@@ -382,9 +404,10 @@
 
     <!-- Секция ЯЗЫКИ, которые я знаю и преподаю -->
     <section id="languages" class="section-padding bg-gray-50">
-        <div class="container mx-auto px-4">
+        <div class="container max-w-full w-full mx-auto px-4">
             <div class="lang-content" data-lang="en">
-                <h2 class="text-4xl font-bold text-center text-blue-800 mb-12">LANGUAGES which I know & teach</h2>
+                <h2 class="text-2xl md:text-4xl font-bold text-center text-blue-800 mb-12">LANGUAGES which I know &
+                    teach</h2>
                 <div class="bg-white p-8 rounded-lg shadow-md">
                     <ol class="list-decimal list-inside space-y-4 text-gray-700">
                         <li>
@@ -440,7 +463,8 @@
                 </div>
             </div>
             <div class="lang-content hidden" data-lang="uk">
-                <h2 class="text-4xl font-bold text-center text-blue-800 mb-12">МОВИ, ЯКІ Я ЗНАЮ ТА ВИКЛАДАЮ</h2>
+                <h2 class="text-2xl md:text-4xl font-bold text-center text-blue-800 mb-12">МОВИ, ЯКІ Я ЗНАЮ ТА ВИКЛАДАЮ
+                </h2>
                 <div class="bg-white p-8 rounded-lg shadow-md">
                     <ol class="list-decimal list-inside space-y-4 text-gray-700">
                         <li>
@@ -497,10 +521,10 @@
     </section>
 
     <!-- Секция МОЕ ОБРАЗОВАНИЕ -->
-    <section id="education" class="section-padding bg-gradient-to-r from-blue-50 to-purple-50">
-        <div class="container mx-auto px-4">
+    <section id="education" class="section-padding bg-[#4300FF]">
+        <div class="container max-w-full w-full mx-auto px-4">
             <div class="lang-content" data-lang="en">
-                <h2 class="text-4xl font-bold text-center text-blue-800 mb-12">MY EDUCATION</h2>
+                <h2 class="text-2xl md:text-4xl font-bold text-center text-white mb-12">MY EDUCATION</h2>
                 <div class="space-y-8">
                     <div class="bg-white p-8 rounded-lg shadow-md">
                         <h3 class="text-2xl font-semibold text-blue-700 mb-2">2010 – 2025: Continuous Professional
@@ -531,7 +555,7 @@
                 </div>
             </div>
             <div class="lang-content hidden" data-lang="uk">
-                <h2 class="text-4xl font-bold text-center text-blue-800 mb-12">МОЯ ОСВІТА</h2>
+                <h2 class="text-2xl md:text-4xl font-bold text-center text-blue-800 mb-12">МОЯ ОСВІТА</h2>
                 <div class="space-y-8">
                     <div class="bg-white p-8 rounded-lg shadow-md">
                         <h3 class="text-2xl font-semibold text-blue-700 mb-2">2010 – 2025: Безперервна професійна освіта
@@ -567,15 +591,15 @@
 
     <!-- Секция МНЕ ДОВЕРЯЮТ (Опыт) -->
     <section id="experience" class="section-padding bg-gray-50">
-        <div class="container mx-auto px-4">
+        <div class="container max-w-full w-full mx-auto px-4">
             <div class="lang-content" data-lang="en">
-                <h2 class="text-4xl font-bold text-center text-blue-800 mb-12">I’M TRUSTED BY</h2>
+                <h2 class="text-2xl md:text-4xl font-bold text-center text-blue-800 mb-12">I’M TRUSTED BY</h2>
                 <div class="bg-white p-8 rounded-lg shadow-md">
-                    <ul class="list-disc list-inside space-y-4 text-gray-700">
+                    <ul class="space-y-4 text-gray-700">
                         <li>
                             <h3 class="text-2xl font-semibold text-blue-700 inline">Educational Establishments (1998 –
                                 2025)</h3>
-                            <ul class="list-disc list-inside ml-8 space-y-2 text-gray-700">
+                            <ul class="ml-8 space-y-2 text-gray-700">
                                 <li>Educational consulting and tutoring (Teaching Business English, English for Specific
                                     Purposes, TOEFL) at International School of Foreign Languages “IQ Consultancy”.</li>
                                 <li>Teaching English at the language school “EnglishUa” (Kyiv).</li>
@@ -592,22 +616,28 @@
                         </li>
                         <li>
                             <h3 class="text-2xl font-semibold text-blue-700 inline">IT Companies (2011 – 2025)</h3>
-                            <p>I created different types of web content for corporate websites and versatile creative
-                                copy for online advertising initiatives in the IT sphere, FinTech, EdTech, MarTech, and
-                                AdTech. I developed Content Strategy/Content Plan/Tone of Voice/Style Guide;
-                                proofread/edited; translated/localized (DE, UA, RU) for both IT companies and
-                                translation agencies.</p>
+                            <ul class="ml-8 space-y-2 text-gray-700">
+                                <li>
+                                    I created different types of web content for corporate websites and versatile
+                                    creative
+                                    copy for online advertising initiatives in the IT sphere, FinTech, EdTech, MarTech,
+                                    and
+                                    AdTech. I developed Content Strategy/Content Plan/Tone of Voice/Style Guide;
+                                    proofread/edited; translated/localized (DE, UA, RU) for both IT companies and
+                                    translation agencies.
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="lang-content hidden" data-lang="uk">
-                <h2 class="text-4xl font-bold text-center text-blue-800 mb-12">МЕНІ ДОВІРЯЮТЬ</h2>
+                <h2 class="text-2xl md:text-4xl font-bold text-center text-blue-800 mb-12">МЕНІ ДОВІРЯЮТЬ</h2>
                 <div class="bg-white p-8 rounded-lg shadow-md">
                     <ul class="list-disc list-inside space-y-4 text-gray-700">
                         <li>
                             <h3 class="text-2xl font-semibold text-blue-700 inline">Навчальні заклади (1998 – 2025)</h3>
-                            <ul class="list-disc list-inside ml-8 space-y-2 text-gray-700">
+                            <ul class="ml-8 space-y-2 text-gray-700">
                                 <li>Освітній консалтинг та репетиторство (викладання ділової англійської, англійської
                                     для спеціальних цілей, TOEFL) в Міжнародній школі іноземних мов «IQ Consultancy».
                                 </li>
@@ -646,11 +676,11 @@
     </section>
 
     <!-- Секция МОИ РАБОТЫ -->
-    <section id="my-works" class="section-padding bg-gradient-to-l from-blue-50 to-purple-50">
-        <div class="container mx-auto px-4">
+    <section id="my-works" class="section-padding bg-[#4300FF]">
+        <div class="container max-w-full w-full mx-auto px-4">
             <div class="lang-content" data-lang="en">
-                <h2 class="text-4xl font-bold text-center text-blue-800 mb-12">MY WORKS</h2>
-                <p class="text-center text-gray-700 mb-10">Here are some of my online articles and scientific
+                <h2 class="text-2xl md:text-4xl font-bold text-center text-white mb-12">MY WORKS</h2>
+                <p class="text-center text-white mb-10">Here are some of my online articles and scientific
                     publications in printed journal volumes:</p>
                 <div
                     class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[repeat(auto-fit,minmax(300px,1fr))] justify-center gap-10">
@@ -726,6 +756,84 @@
                     </div>
                 </div>
             </div>
+            <div class="lang-content hidden" data-lang="uk">
+                <h2 class="text-2xl md:text-4xl font-bold text-center text-blue-800 mb-12">МОЇ РОБОТИ</h2>
+                <p class="text-center text-gray-700 mb-10">Ось деякі з моїх онлайн-статей та наукових публікацій у
+                    друкованих журналах:</p>
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[repeat(auto-fit,minmax(300px,1fr))] justify-center gap-10">
+                    <!-- Стаття 1 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                        <img src="https://placehold.co/300x200/A7D9FF/2C3E50?text=Article+Image+1"
+                            alt="Зображення статті" class="rounded-md mb-4 w-full h-48 object-cover">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2">Як поєднати пристрасть до письма та
+                            заробіток</h3>
+                        <a href="https://www.ning.com/blog/2017/04/making-money-blogging.html" target="_blank"
+                            class="text-blue-600 hover:underline mt-auto">Читати далі</a>
+                    </div>
+                    <!-- Стаття 2 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                        <img src="https://placehold.co/300x200/A7D9FF/2C3E50?text=Article+Image+2"
+                            alt="Зображення статті" class="rounded-md mb-4 w-full h-48 object-cover">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2">Як культурні відмінності впливають на
+                            аутсорсинг розробки ПЗ</h3>
+                        <a href="https://sonerim.com/blog/how-cultural-differences-affect-outsourcing-of-software-development/"
+                            target="_blank" class="text-blue-600 hover:underline mt-auto">Читати далі</a>
+                    </div>
+                    <!-- Стаття 3 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                        <img src="https://placehold.co/300x200/A7D9FF/2C3E50?text=Article+Image+3"
+                            alt="Зображення статті" class="rounded-md mb-4 w-full h-48 object-cover">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2">Мови Олімпіади</h3>
+                        <a href="https://vidby.com/blog/languages-of-the-olympics" target="_blank"
+                            class="text-blue-600 hover:underline mt-auto">Читати далі</a>
+                    </div>
+                    <!-- Стаття 4 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                        <img src="https://placehold.co/300x200/A7D9FF/2C3E50?text=Article+Image+4"
+                            alt="Зображення статті" class="rounded-md mb-4 w-full h-48 object-cover">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2">Складні та легкі книги</h3>
+                        <a href="https://bit.ua/2015/01/hard-and-easy-books/" target="_blank"
+                            class="text-blue-600 hover:underline mt-auto">Читати далі</a>
+                    </div>
+                    <!-- Стаття 5 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                        <img src="https://placehold.co/300x200/A7D9FF/2C3E50?text=Article+Image+5"
+                            alt="Зображення статті" class="rounded-md mb-4 w-full h-48 object-cover">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2">Космос наш</h3>
+                        <a href="https://bit.ua/2015/01/space-is-ours/" target="_blank"
+                            class="text-blue-600 hover:underline mt-auto">Читати далі</a>
+                    </div>
+                    <!-- Наукова публікація 1 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                        <img src="https://placehold.co/300x200/A7D9FF/2C3E50?text=Publication+Image+1"
+                            alt="Зображення публікації" class="rounded-md mb-4 w-full h-48 object-cover">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2">Англійські прислівники: концептуальні
+                            моделі позначення.</h3>
+                        <p class="text-gray-700 text-sm">Матеріали 8-ї Міжнародної конференції з когнітивної лінгвістики
+                            “Дослідження в когнітивній лінгвістиці, функціоналізмі та дискурсі: спільні основи та нові
+                            напрями”. Логроньо, Іспанія. 1 січня 2003 р.</p>
+                    </div>
+                    <!-- Наукова публікація 2 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                        <img src="https://placehold.co/300x200/A7D9FF/2C3E50?text=Publication+Image+2"
+                            alt="Зображення публікації" class="rounded-md mb-4 w-full h-48 object-cover">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2">Англійські прислівники способу буття:
+                            перспективи концептуального аналізу.</h3>
+                        <p class="text-gray-700 text-sm">Актуальні проблеми менталінгвістики: Науковий збірник
+                            матеріалів міжнародної конференції з когнітивної лінгвістики. Варшава, Польща. 2003.</p>
+                    </div>
+                    <!-- Наукова публікація 3 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                        <img src="https://placehold.co/300x200/A7D9FF/2C3E50?text=Publication+Image+3"
+                            alt="Зображення публікації" class="rounded-md mb-4 w-full h-48 object-cover">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2">Аргументні ролі в семантиці англійських
+                            прислівників способу буття.</h3>
+                        <p class="text-gray-700 text-sm">Вісник Харківського національного університету ім. В. Н.
+                            Каразіна. Випуск № 609. – Харків: Константа. 2003.</p>
+                    </div>
+                </div>
+            </div>
             <div class="text-center mt-12">
                 <a href="#contacts" class="btn-primary">
 
@@ -740,9 +848,9 @@
 
     <!-- Секция РЕКОМЕНДАЦИИ (Отзывы) -->
     <section id="feedback" class="section-padding bg-gray-50">
-        <div class="container mx-auto px-4">
+        <div class="container max-w-full w-full mx-auto px-4">
             <div class="lang-content" data-lang="en">
-                <h2 class="text-4xl font-bold text-center text-blue-800 mb-12">RECOMMENDATIONS</h2>
+                <h2 class="text-2xl md:text-4xl font-bold text-center text-blue-800 mb-12">RECOMMENDATIONS</h2>
                 <div class="bg-white p-8 rounded-lg shadow-md">
                     <ul class="space-y-4 text-gray-700">
                         <li>
@@ -839,9 +947,9 @@
                 </div>
             </div>
             <div class="lang-content hidden" data-lang="uk">
-                <h2 class="text-4xl font-bold text-center text-blue-800 mb-12">РЕКОМЕНДАЦІЇ</h2>
+                <h2 class="text-2xl md:text-4xl font-bold text-center text-blue-800 mb-12">РЕКОМЕНДАЦІЇ</h2>
                 <div class="bg-white p-8 rounded-lg shadow-md">
-                    <ul class="list-disc list-inside space-y-4 text-gray-700">
+                    <ul class="space-y-4 text-gray-700">
                         <li>
                             <div class="flex items-start mb-2">
                                 <img src="https://placehold.co/60x60/A7D9FF/2C3E50?text=ГС" alt="Галина Садирова"
@@ -948,11 +1056,11 @@
     </section>
 
     <!-- Секция КАК СО МНОЙ СВЯЗАТЬСЯ (Контакты) -->
-    <section id="contacts" class="section-padding bg-gradient-to-r from-blue-100 to-purple-100">
-        <div class="container mx-auto px-4 text-center">
+    <section id="contacts" class="section-padding bg-[#4300FF]">
+        <div class="container max-w-full w-full mx-auto px-4 text-center">
             <div class="lang-content" data-lang="en">
-                <h2 class="text-4xl font-bold text-blue-800 mb-8">HOW TO GET IN TOUCH WITH ME</h2>
-                <p class="text-lg text-gray-700 mb-6">To book a trial lesson or ask me any questions, please fill out
+                <h2 class="text-2xl md:text-4xl font-bold text-white mb-8">HOW TO GET IN TOUCH WITH ME</h2>
+                <p class="text-lg text-white mb-6">To book a trial lesson or ask me any questions, please fill out
                     the form below:</p>
                 <div class="bg-white p-8 rounded-lg shadow-xl inline-block w-full max-w-md">
                     <form action="mailto:novak.marian@gmail.com" method="post" enctype="text/plain" class="space-y-6">
@@ -985,8 +1093,8 @@
                 </div>
             </div>
             <div class="lang-content hidden" data-lang="uk">
-                <h2 class="text-4xl font-bold text-blue-800 mb-8">ЯК ЗІ МНОЮ ЗВ'ЯЗАТИСЯ</h2>
-                <p class="text-lg text-gray-700 mb-6">Щоб записатися на пробний урок або поставити мені будь-які
+                <h2 class="text-2xl md:text-4xl font-bold text-white mb-8">ЯК ЗІ МНОЮ ЗВ'ЯЗАТИСЯ</h2>
+                <p class="text-lg text-white mb-6">Щоб записатися на пробний урок або поставити мені будь-які
                     запитання, будь ласка, заповніть форму нижче:</p>
                 <div class="bg-white p-8 rounded-lg shadow-xl inline-block w-full max-w-md">
                     <form action="mailto:novak.marian@gmail.com" method="post" enctype="text/plain" class="space-y-6">
@@ -1011,7 +1119,10 @@
                                 class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                 placeholder="Ваше повідомлення..." required></textarea>
                         </div>
-                        <button type="submit" class="btn-primary w-full">Надіслати повідомлення</button>
+                        <button type="submit"
+                            class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+                            Надіслати повідомлення
+                        </button>
                     </form>
                 </div>
             </div>
